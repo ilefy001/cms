@@ -117,6 +117,16 @@ class CategoryController extends Controller
         $rt->PrintFormatByEncodeJson();
     }
 
+    public function actionGetTopCategoryList(){
+        $rt = new WebServiceResult;
+        $category_list = \app\models\Category::find()
+            ->where(['parent_id' => 0])
+            ->orderBy('id')
+            ->all();
+        $rt->SetParam('list',$category_list);
+        $rt->PrintFormatByEncodeJson();
+    }
+
     /**
      * Finds the Category model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
