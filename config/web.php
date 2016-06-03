@@ -2,6 +2,9 @@
 
 $params = require(__DIR__ . '/params.php');
 
+Yii::$classMap['CategoryManage'] = '@app/libs/CategoryManage.php';
+Yii::$classMap['WebServiceResult'] = '@app/libs/WebServiceResult.php';
+
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),

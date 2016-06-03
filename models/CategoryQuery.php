@@ -3,11 +3,11 @@
 namespace app\models;
 
 /**
- * This is the ActiveQuery class for [[Country]].
+ * This is the ActiveQuery class for [[Category]].
  *
- * @see Country
+ * @see Category
  */
-class CountryQuery extends \yii\db\ActiveQuery
+class CategoryQuery extends \yii\db\ActiveQuery
 {
     /*public function active()
     {
@@ -16,7 +16,7 @@ class CountryQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return Country[]|array
+     * @return Category[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +25,7 @@ class CountryQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return Country|array|null
+     * @return Category|array|null
      */
     public function one($db = null)
     {
