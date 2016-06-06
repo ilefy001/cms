@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Contents';
+$this->title = '内容管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="content-index">
@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Content', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('添加内容', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -27,8 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'fulltext:ntext',
             'author_id',
             // 'sort',
-            // 'create_time',
-            // 'update_time',
+             'create_time',
+             'update_time',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

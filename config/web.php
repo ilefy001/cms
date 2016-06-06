@@ -41,6 +41,10 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'tpl' => [
+            'class' => 'yii\smarty\ViewRenderer',
+            //'cachePath' => '@runtime/Smarty/cache',
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

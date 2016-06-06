@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Content */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Contents', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '内容管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="content-view">
@@ -15,28 +15,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('编辑', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('删除', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '你确定要删除该篇文章吗?',
                 'method' => 'post',
             ],
         ]) ?>
     </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'title',
-            'introtext:ntext',
-            'fulltext:ntext',
-            'author_id',
-            'sort',
-            'create_time',
-            'update_time',
-        ],
-    ]) ?>
+    <table id="w0" class="table table-striped table-bordered detail-view"><tbody><tr><th>ID</th><td>1</td></tr>
+        <tr><th>标题</th><td><?= $model->title; ?></td></tr>
+        <tr><th>文章摘要</th><td><?= $model->introtext; ?></td></tr>
+        <tr><th>全文内容</th><td><?= $model->fulltext; ?></td></tr>
+        <tr><th>作者</th><td><span class="not-set">(not set)</span></td></tr>
+        <tr><th>排序</th><td>0</td></tr>
+        <tr><th>创建时间</th><td><?= $model->create_time; ?></td></tr>
+        <tr><th>更新时间</th><td><?= $model->update_time; ?></td></tr></tbody></table>
 
 </div>
