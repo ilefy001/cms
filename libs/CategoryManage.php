@@ -14,12 +14,17 @@ class CategoryManage {
             ->all();
 
         if(!empty($category_list)){
+            $list = array();
             //如果不为空，则递归
             foreach ($category_list as $category) {
-//                 $res = $this->getCategoryList($category->id);
-//                 var_dump($res);
+                $item = $category->attributes;
+                 $res = $this->getCategoryList($category->id);
+                 if (!empty($res)){
+                     $item['subcategory_list'] = $res;
+                 }
+                 array_push($list,$item);
             }
-            return $category_list;
+            return $list;
         }
         return false;
     }

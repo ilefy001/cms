@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "content".
  *
  * @property integer $id
+ * @property integer $category_id
  * @property string $title
  * @property string $introtext
  * @property string $fulltext
@@ -32,9 +33,9 @@ class Content extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['category_id', 'author_id', 'sort'], 'integer'],
             [['title', 'fulltext'], 'required'],
             [['introtext', 'fulltext'], 'string'],
-            [['author_id', 'sort'], 'integer'],
             [['create_time', 'update_time'], 'safe'],
             [['title'], 'string', 'max' => 255],
         ];
@@ -47,6 +48,7 @@ class Content extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'category_id' => 'Category ID',
             'title' => 'Title',
             'introtext' => 'Introtext',
             'fulltext' => 'Fulltext',
